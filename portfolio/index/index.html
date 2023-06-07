@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>PORTFOLIO</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <transition name="fade">
+          <div class="slide" :key="idx" v-for="(slide, idx) in slides" v-if="picCount == idx">
+            <img class="slide-img" :src="slide.img">
+          </div>
+        </transition>
+        <div class="top-view">
+          <h1 class="font-top-view-size">PORTFOLIO</h1>
+          <h2 class="font-default-size">portfolioのダミーテキストです</h2>
+        </div>
+        <div class="menu-bar-background"
+            :class="{ 'menu-bar-background-draw' : isHeaderDraw,
+                      'menu-bar-background-no-draw' : (!isHeaderDraw && isStartFlag == 1)}"
+        ></div>
+        <div class="menu-bar menu-bar-padding-top "
+            :class="{ 'menu-bar-flex' : isHeaderDraw,
+                      'menu-bar-flex-padding' : isHeaderDraw,
+                      'menu-bar-no-flex'  : (!isHeaderDraw && isStartFlag == 1)}"
+        >
+          <a href="#"><img src="img/logo.png"></a>
+          <div class="hamburger-menu" v-if="screenWidth <= 960">
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <div class="menu-content">
+              <ul>
+                <li
+                  v-for="(item, i) in menuLists"
+                  :key="i"
+                  class="font-menu-size"
+                ><a :href="item.path" >{{item.name}}</a></li>
+              </ul>
+            </div>
+          </div>
+          <nav v-else>
+            <ul>
+              <li
+                v-for="(item, i) in menuLists"
+                :key="i"
+                class="font-menu-size"
+              ><a :href="item.path" >{{item.name}}</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section class="item-box about-box" id="about">
+          <div class="title font-topic-size about-title">ABOUT</div>
+          <div class="img-center" v-for="(about) in aboutImgs" v-if="isAboutImgDraw">
+            <img :class="about.class" :src="about.img">
+          </div>
+          <h2 class="font-default-size"  v-if="isAboutImgDraw">
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+          </h2>
+        </section>
+
+        <section class="item-box product-box" id="product">
+          <div class="title font-topic-size product-title">PRODUCT</div>
+          <div class="img-center" v-for="(product) in productImgs" v-if="isProductImgDraw">
+            <img :class="product.imgClass" :src="product.img">
+            <div class="product-text font-default-size" :class="product.textClass">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</div>
+          </div>
+        </section>
+
+        <section class="item-box company-box" id="conpany">
+          <div class="title font-topic-size company-title">COMPANY</div>
+          <div class="img-center" v-for="(company) in companyImgs" v-if="isCompanyImgDraw">
+            <img :class="company.class" :src="company.img">
+          </div>
+          <h2 class="font-default-size" v-if="isCompanyImgDraw">
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br>
+            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+          </h2>
+        </section>
+
+        <section class="item-box contact-box" id="contact">
+          <div class="title font-topic-size contact-title">CONTACT</div>
+          <div v-for="(contact) in contactBox">
+            <h2 class="font-default-size">{{contact.boxTitle}}</h2>
+            <input class="contact-text font-default-size" type="text" name="contact.boxName" placeholder="text">
+          </div>
+          <input class="contact-button font-default-size" type="button" value="送信">
+        </section>
+
+      </main>
+      <footer class="font-footer-size">
+        footer information
+      </footer>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,909 @@
+@charset "utf-8";
+
+@media screen and (max-width: 640px) {
+
+    .font-default-size {
+        font-size: 15px;
+    }
+    .font-topic-size {
+        font-size: 40px;
+    }
+    .font-top-view-size {
+        font-size: 30px;
+    }
+    .font-menu-size,
+    .font-footer-size {
+        font-size: 12px;
+    }
+    .menu-bar a img {
+        padding-left: 20px;
+        width: 125px;
+    }
+    .menu-bar-flex-padding,
+    .menu-bar-padding-top {
+        padding-top: 10px;
+    }
+    .menu-bar-background {
+        width: 100%;
+        height: 110px;
+        position: fixed;
+        background: #404040;
+        opacity: 0;
+    }
+    .top-view {
+        position: absolute;
+        display: inline-block;
+        padding: 40vh 0 0 10vw;
+        text-shadow: 1px 2px 3px #808080;
+    }
+    .about-box,
+    .product-box,
+    .company-box,
+    .contact-box {
+        width: 80%;
+        margin: auto;
+        padding-top: 75px;
+        text-align: center;
+    }
+    .about-title,
+    .product-title,
+    .company-title ,
+    .contact-title {
+        padding: 20px 0;
+    }
+    .about-box img,
+    .product-box img,
+    .company-box img  {
+        width: 100%;
+        margin: 10px 0;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        box-shadow: 0 7px 10px 0 rgba(0, 0, 0, .5);
+    }
+    .about-box h2,
+    .company-box h2 {
+        margin: 30px 5%;
+        text-align: center;
+        color: #404040;
+    }
+    .product-text1,
+    .product-text2,
+    .product-text3 {
+        margin: 10px 5% 40px 5%;
+        text-align: center;
+        color: #404040;
+        font-weight: bold;
+    }
+    .contact-box h2{
+        text-align: left;
+        margin-left: 10%;
+        color: #404040;
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+    .contact-text {
+        width: 80%;
+        margin: auto;
+        background-color: #f0f0f0;
+        color: #404040;
+        padding: 5px 20px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+    }
+    .contact-button {
+        width: 125px;
+        margin: auto;
+        padding: 10px;
+        background-color: #172480;
+        color: #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+    .hamburger-menu {
+        display: inline;
+        margin: 0 60px 0 auto;
+    }
+    .menu-btn {
+        position: fixed;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        z-index: 999;
+        background-color: #404040;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 17px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn span:before {
+        bottom: 6px;
+    }
+    .menu-btn span:after {
+        top: 6px;
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .menu-content {
+        position: fixed;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        z-index: 80;
+        background-color: #404040;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    #menu-btn-check:checked ~ .menu-content {
+        right: 0;
+        opacity: 1;
+    }
+    .menu-content ul {
+        padding: 45px 10px 0 10px;
+    }
+    .menu-content ul li {
+        width: 50px;
+        border-bottom: solid 1px #ffffff;
+        list-style: none;
+    }
+    .menu-content ul li a {
+        display: block;
+        width: 100%;
+        font-size: 7px;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        padding: 8px 0 2px 0;
+        position: relative;
+    }
+    @keyframes fadein-background-anime{
+        from {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(-55px);
+        }
+    }
+    @keyframes fadeout-background-anime{
+        from {
+            opacity: 1;
+            transform: translateY(-55px);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(0);
+        }
+    }
+}
+@media screen and (min-width: 641px) and (max-width: 960px) {
+    .font-default-size {
+        font-size: 18px;
+    }
+    .font-topic-size {
+        font-size: 70px;
+    }
+    .font-top-view-size {
+        font-size: 40px;
+    }
+    .font-menu-size,
+    .font-footer-size {
+        font-size: 25px;
+    }
+    .menu-bar-flex-padding,
+    .menu-bar-padding-top {
+        padding-top: 30px;
+    }
+    .menu-bar a img {
+        padding-left: 30px;
+        width: 150px;
+    }
+    .menu-bar-background {
+        width: 100%;
+        height: 140px;
+        position: fixed;
+        background: #404040;
+        opacity: 0;
+    }
+    .item-box {
+        padding: 100px 0 100px 0;
+    }
+    .top-view {
+        position: absolute;
+        display: inline-block;
+        padding: 36vh 0 0 8vw;
+        text-shadow: 3px 5px 3px #808080;
+    }
+    .about-box {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 125px 250px;
+        gap: 10% 0;
+    }
+    .about-title {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding: 10px 0;
+    }
+    .about-box img {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        opacity: 0;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        z-index: 1;
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .5);
+    }
+    .about-img1 {
+        width: 80%;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        animation-name: fadein-left-anime;
+    }
+    .about-img2 {
+        width: 80%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        animation-name: fadein-right-anime;
+        animation-delay: 0.7s;
+    }
+    .about-box h2{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin: 0 10%;
+        align-self: center;
+        text-align: center;
+        color: #404040;
+        opacity: 0;
+        animation-name: fadein-left-anime;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.4s;
+    }
+    .product-box {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 100px 150px 200px;
+        gap: 8% 0;
+        justify-content: center;
+    }
+    .product-title {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        align-self: center;
+    }
+    .product-box img {
+        width: 80%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        opacity: 0;
+        animation-name: fadein-up-anime;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        grid-row: 2/3;
+        z-index: 1;
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .5);
+    }
+    .product-img1 {
+        margin-top: 20%;
+        grid-column: 1/2;
+        animation-delay: 0.5s;
+    }
+    .product-img2 {
+        grid-column: 2/3;
+    }
+    .product-img3 {
+        margin-top: 40%;
+        grid-column: 3/4;
+        animation-delay: 1.0s;
+    }
+    .product-text {
+        width: 75%;
+        margin: 50px auto 0 auto;
+        color: #404040;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0;
+        animation-name: fadein-up-anime;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        grid-column: 3/4;
+        z-index: 1;
+    }
+    .product-text1 {
+        grid-column: 1/2;
+        animation-delay: 0.5s;
+    }
+    .product-text2 {
+        grid-column: 2/3;
+    }
+    .product-text3 {
+        grid-column: 3/4;
+        animation-delay: 1.0s;
+    }
+    .company-box {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 125px 250px;
+        gap: 10% 0;
+    }
+    .company-title {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        align-self: center;
+    }
+    .company-box img {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        opacity: 0;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        z-index: 1;
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .5);
+    }
+    .company-img1 {
+        width: 80%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        animation-name: fadein-right-anime;
+    }
+    .company-img2 {
+        width: 80%;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        animation-name: fadein-left-anime;
+        animation-delay: 0.7s;
+    }
+    .company-box h2{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 0 10%;
+        align-self: center;
+        text-align: center;
+        color: #404040;
+        font-weight: bold;
+        opacity: 0;
+        animation-name: fadein-right-anime;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.4s;
+    }
+    .contact-box {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .contact-title {
+        margin-bottom: 25px;
+        align-self: center;
+    }
+    .contact-box h2{
+        text-align: left;
+        margin-left: 22%;
+        color: #404040;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .contact-text {
+        width: 50%;
+        margin: auto;
+        background-color: #f0f0f0;
+        color: #404040;
+        padding: 5px 20px;
+        border-radius: 30px;
+        margin-bottom: 30px;
+    }
+    .contact-button {
+        width: 125px;
+        margin: auto;
+        padding: 10px;
+        background-color: #172480;
+        color: #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+    .hamburger-menu {
+        display: inline;
+        margin: 0 100px 0 auto;
+    }
+    .menu-btn {
+        position: fixed;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        z-index: 999;
+        background-color: #404040;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn span:before {
+        bottom: 8px;
+    }
+    .menu-btn span:after {
+        top: 8px;
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .menu-content {
+        position: fixed;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        background-color: #404040;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    #menu-btn-check:checked ~ .menu-content {
+        right: 0;
+        opacity: 1;
+    }
+    .menu-content ul {
+        padding: 80px 30px 0 30px;
+    }
+    .menu-content ul li {
+        width: 75px;
+        border-bottom: solid 1px #ffffff;
+        list-style: none;
+    }
+    .menu-content ul li a {
+        display: block;
+        width: 100%;
+        font-size: 15px;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        padding: 9px 15px 10px 0;
+        position: relative;
+    }
+    @keyframes fadein-background-anime{
+        from {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(-50px);
+        }
+    }
+    @keyframes fadeout-background-anime{
+        from {
+            opacity: 1;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(0);
+        }
+    }
+}
+@media screen and (min-width: 961px) {
+    .font-default-size {
+        font-size: 30px;
+    }
+    .font-topic-size {
+        font-size: 90px;
+    }
+    .font-top-view-size {
+        font-size: 60px;
+    }
+    .font-menu-size,
+    .font-footer-size {
+        font-size: 25px;
+    }
+    .menu-bar-padding-top {
+        padding-top: 60px;
+    }
+    .menu-bar a img {
+        padding-left: 50px;
+    }
+    .menu-bar-background {
+        width: 100%;
+        height: 150px;
+        position: fixed;
+        background: #404040;
+        opacity: 0;
+    }
+    .menu-bar-flex-padding {
+        padding-top: 20px;
+    }
+    .item-box {
+        padding: 100px 0 250px 0;
+    }
+    .top-view {
+        position: absolute;
+        display: inline-block;
+        padding: 34vh 0 0 8vw;
+        text-shadow: 3px 5px 3px #808080;
+    }
+    .about-box {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 300px 400px;
+        gap: 10% 0;
+    }
+    .about-title {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding: 50px 0;
+    }
+    .about-box img {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        opacity: 0;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        z-index: 1;
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .5);
+    }
+    .about-img1 {
+        width: 60%;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        animation-name: fadein-left-anime;
+    }
+    .about-img2 {
+        width: 80%;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        animation-name: fadein-right-anime;
+        animation-delay: 0.7s;
+    }
+    .about-box h2{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin: 0 10%;
+        align-self: center;
+        text-align: center;
+        color: #404040;
+        opacity: 0;
+        animation-name: fadein-left-anime;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.4s;
+    }
+    .product-box {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 200px 300px 200px;
+        gap: 10% 0;
+        justify-content: center;
+    }
+    .product-title {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        align-self: center;
+    }
+    .product-box img {
+        width: 80%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        opacity: 0;
+        animation-name: fadein-up-anime;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        grid-row: 2/3;
+        z-index: 1;
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .5);
+    }
+    .product-img1 {
+        margin-top: 10%;
+        grid-column: 1/2;
+        animation-delay: 0.5s;
+    }
+    .product-img2 {
+        grid-column: 2/3;
+    }
+    .product-img3 {
+        margin-top: 20%;
+        grid-column: 3/4;
+        animation-delay: 1.0s;
+    }
+    .product-text {
+        width: 75%;
+        margin: 50px auto 0 auto;
+        color: #404040;
+        text-align: center;
+        font-weight: bold;
+        opacity: 0;
+        animation-name: fadein-up-anime;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        grid-column: 3/4;
+        z-index: 1;
+    }
+    .product-text1 {
+        grid-column: 1/2;
+        animation-delay: 0.5s;
+    }
+    .product-text2 {
+        grid-column: 2/3;
+    }
+    .product-text3 {
+        grid-column: 3/4;
+        animation-delay: 1.0s;
+    }
+    .company-box {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 300px 400px;
+        gap: 10% 0;
+    }
+    .company-title {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        align-self: center;
+    }
+    .company-box img {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        opacity: 0;
+        animation-duration: 0.6s;
+        animation-fill-mode: forwards;
+        z-index: 1;
+        box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .5);
+    }
+    .company-img1 {
+        width: 60%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        animation-name: fadein-right-anime;
+    }
+    .company-img2 {
+        width: 80%;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        animation-name: fadein-left-anime;
+        animation-delay: 0.7s;
+    }
+    .company-box h2{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: 0 10%;
+        align-self: center;
+        text-align: center;
+        color: #404040;
+        font-weight: bold;
+        opacity: 0;
+        animation-name: fadein-right-anime;
+        animation-duration: 0.7s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.4s;
+    }
+    .contact-box {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .contact-title {
+        margin-bottom: 25px;
+        align-self: center;
+    }
+    .contact-box h2{
+        text-align: left;
+        margin-left: 25%;
+        color: #404040;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .contact-text {
+        width: 50%;
+        margin: auto;
+        background-color: #f0f0f0;
+        color: #404040;
+        padding: 5px 20px;
+        border-radius: 30px;
+        margin-bottom: 50px;
+    }
+    .contact-button {
+        width: 175px;
+        margin: auto;
+        padding: 10px;
+        background-color: #172480;
+        color: #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+    @keyframes fadein-background-anime{
+        from {
+            opacity: 0;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(-70px);
+        }
+    }
+    @keyframes fadeout-background-anime{
+        from {
+            opacity: 1;
+            transform: translateY(-70px);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(0);
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald','Hiragino Sans','Meiryo',sans-serif;
+    color: #f0f0f0;
+}
+.img-center {
+    text-align: center;
+}
+header {
+    width: 100%;
+    height: 100vh;
+}
+.slide{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.slide-img {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: all 1.5s ease;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.menu-bar {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.menu-bar-background-draw {
+    animation-name: fadein-background-anime;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    z-index: 998;
+}
+.menu-bar-background-no-draw {
+    animation-name: fadeout-background-anime;
+    animation-duration: 0.50s;
+    animation-fill-mode: forwards;
+}
+.menu-bar-flex {
+    position: fixed;
+    z-index: 999;
+}
+.menu-bar nav {
+    margin: auto 20px 0 auto;
+    vertical-align: bottom;
+}
+.menu-bar nav ul {
+    margin-right: 30px;
+    margin-left: auto;
+    list-style: none;
+}
+.menu-bar nav ul li {
+    display: inline;
+    padding: 20px;
+}
+.menu-bar nav ul li a {
+    text-shadow: 1px 1px 1px #808080;
+    font-weight: bold;
+    text-decoration: none;
+}
+main {
+    padding-top: 100px;
+    background-image: url("../img/background.jpg");
+}
+.title {
+    color: #172480;
+    text-align: center;
+    text-shadow: 3px 5px 3px #808080;
+    font-weight: bold;
+}
+footer {
+    background: #404040;
+    text-align: center;
+    padding: 30px;
+}
+
+@keyframes fadein-left-anime{
+    from {
+        opacity: 0;
+        transform: translate(150px,70px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes fadein-right-anime{
+    from {
+        opacity: 0;
+        transform: translate(-150px,70px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes fadein-up-anime{
+    from {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
